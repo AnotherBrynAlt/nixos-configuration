@@ -1,0 +1,3 @@
+{stateVersion, ...}: {
+  system = {inherit stateVersion;};
+}
