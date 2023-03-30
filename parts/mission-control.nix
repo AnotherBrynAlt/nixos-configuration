@@ -1,4 +1,5 @@
 {
+  inputs',
   self',
   pkgs,
   config,
@@ -20,6 +21,10 @@
       menu
     '';
     scripts = {
+      colmena = {
+        exec = inputs'.colmena.packages.colmena;
+        category = "🏗️ Build";
+      };
       sops = {
         exec = pkgs.sops;
         category = "🔒️Security";

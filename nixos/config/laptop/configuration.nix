@@ -12,9 +12,6 @@
     "mem_sleep_default=deep"
   ];
 
-  # Enable DConf for permanence
-  programs.dconf.enable = true;
-
   # HiDPI Options
   hardware.video.hidpi.enable = true;
   services.xserver = {

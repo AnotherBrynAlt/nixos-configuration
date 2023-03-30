@@ -5,7 +5,7 @@
   ...
 }: {
   home.packages = builtins.attrValues {
-    inherit (pkgs) alejandra betterdiscordctl discord fx just microsoft-edge ripgrep;
+    inherit (pkgs) hydra-check ripgrep;
     inherit (inputs.comma.packages.${system}) default;
   };
 }

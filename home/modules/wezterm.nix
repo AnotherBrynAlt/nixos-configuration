@@ -25,4 +25,7 @@ _: {
       '';
     };
   };
+  home.sessionVariables = {
+    TERMINAL = "wezterm";
+  };
 }

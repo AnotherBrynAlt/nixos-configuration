@@ -1,0 +1,37 @@
+{pkgs, ...}: {
+  home.packages = builtins.attrValues {
+    inherit
+      (pkgs)
+      bandwhich
+      diskonaut
+      du-dust
+      dua
+      duf
+      entr
+      fwupd
+      glances
+      iperf3
+      iotop
+      kmon
+      ldns
+      lnav
+      lsof
+      mosh
+      ncdu
+      smartmontools
+      procs
+      psmisc
+      systeroid
+      sysz
+      thefuck
+      ;
+    inherit
+      (pkgs.bat-extras)
+      batdiff
+      batgrep
+      batman
+      batwatch
+      prettybat
+      ;
+  };
+}

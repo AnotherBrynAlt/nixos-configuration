@@ -1,7 +1,7 @@
 {flake, ...}: {
   services = {
     flameshot = {
-      enable = false;
+      enable = true;
       # settings = {
       #   General = {
       #     savePath = "/home/${flake.config.people.myself}/Pictures";

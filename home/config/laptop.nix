@@ -5,5 +5,7 @@ in {
     stateVersion = "22.11";
     inherit username;
     homeDirectory = "/home/${username}";
+    sessionVariables = {
+    };
   };
 }

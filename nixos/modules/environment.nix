@@ -1,22 +1,30 @@
 {pkgs, ...}: {
   environment = {
+    enableAllTerminfo = true;
     variables = {
-      TERMINAL = "wezterm";
-      EDITOR = "hx";
-      VISUAL = "hx";
-      MOZ_USE_XINPUT2 = "1";
-      MOZ_ENABLE_WAYLAND = "1";
     };
     systemPackages = builtins.attrValues {
       inherit
         (pkgs)
         curl
+        dnsutils
+        dosfstools
+        efibootmgr
+        gptfdisk
         git
+        inetutils
+        iputils
         killall
+        mtr
+        nethogs
         nano
+        nix-ld
         pciutils
-        ripgrep
+        sshfs
+        smem
+        sysstat
         usbutils
+        util-linux
         wget
         ;
     };

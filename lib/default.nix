@@ -20,6 +20,7 @@ in {
           specialArgs = {
             inherit system stateVersion inputs;
             flake = {inherit config;};
+            pkgs = pkgsForSystem system;
           };
           inherit modules;
         };

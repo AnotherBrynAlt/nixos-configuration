@@ -1,10 +1,12 @@
 _: let
   autorandr = import ./autorandr.nix;
+  atop = import ./atop.nix;
   boot = import ./boot.nix;
   bluetooth = import ./bluetooth.nix;
   environment = import ./environment.nix;
+  flatpak = import ./flatpak.nix;
   fonts = import ./fonts.nix;
-  intel = import ./intel.nix;
+  intel-hd = import ./intel-hd.nix;
   locale = import ./locale.nix;
   nil = import ./nil.nix;
   nix = import ./nix.nix;
@@ -12,6 +14,8 @@ _: let
   nvidia = import ./nvidia.nix;
   plasma = import ./plasma.nix;
   printing = import ./printing.nix;
+  security = import ./security.nix;
+  services = import ./services.nix;
   sound = import ./sound.nix;
   system = import ./system.nix;
   touchpad = import ./touchpad.nix;
@@ -22,11 +26,12 @@ in {
     nixosModules = {
       inherit
         autorandr
+        atop
         boot
         bluetooth
         environment
         fonts
-        intel
+        intel-hd
         locale
         nil
         nix
@@ -34,14 +39,15 @@ in {
         nvidia
         plasma
         printing
+        security
         sound
         system
         touchpad
         user
         xserver
         ;
-      base = {imports = [boot environment user nil nix system networking locale];};
-      desktop = {imports = [autorandr xserver plasma sound printing bluetooth fonts touchpad];};
+      base = {imports = [boot environment user nil nix services system networking locale security];};
+      desktop = {imports = [autorandr atop flatpak xserver plasma sound printing bluetooth fonts touchpad];};
     };
   };
 }

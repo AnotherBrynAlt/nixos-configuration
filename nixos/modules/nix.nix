@@ -9,7 +9,11 @@
       auto-optimise-store = true;
     };
     gc = {
-      automatic = false;
+      automatic = true;
+      dates = "weekly";
+    };
+    optimise = {
+      automatic = true;
     };
     registry.nixpkgs.flake = inputs.nixpkgs;
     extraOptions = ''

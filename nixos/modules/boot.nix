@@ -3,7 +3,9 @@
     loader = {
       systemd-boot = {
         enable = true;
-        configurationLimit = 20;
+        editor = true;
+        configurationLimit = 24;
+        consoleMode = "auto";
       };
       efi = {
         canTouchEfiVariables = true;
@@ -11,7 +13,7 @@
       };
       timeout = 10;
     };
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     initrd.secrets = {
       "/crypto_keyfile.bin" = null;
     };
