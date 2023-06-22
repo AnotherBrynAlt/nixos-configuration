@@ -174,7 +174,7 @@
   };
 
   outputs = {self, ...} @ inputs: let
-    stateVersion = "22.11";
+    stateVersion = "23.05";
   in
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];

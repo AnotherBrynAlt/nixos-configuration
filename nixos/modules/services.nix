@@ -1,8 +1,8 @@
 _: {
   services = {
-    earlyoom = {
-      enable = true;
-    };
+    # earlyoom = {
+    #   enable = true;
+    # };
     fstrim = {
       enable = true;
     };

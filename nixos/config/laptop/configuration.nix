@@ -13,7 +13,8 @@
   ];
 
   # HiDPI Options
-  hardware.video.hidpi.enable = true;
+  # hardware.video.hidpi.enable = true;
+  # fonts.optimizeForVeryHighDPI = true;
   services.xserver = {
     dpi = 153;
     displayManager.sessionCommands = ''

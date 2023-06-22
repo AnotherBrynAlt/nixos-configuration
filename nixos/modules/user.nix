@@ -9,4 +9,6 @@
     extraGroups = ["networkmanager" "wheel" "video" "audio"];
     shell = pkgs.zsh;
   };
+
+  programs.zsh.enable = true;
 }

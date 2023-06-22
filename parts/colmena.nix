@@ -9,7 +9,7 @@
       meta = let
         inherit inputs;
         system = "x86_64-linux";
-        stateVersion = "22.11";
+        stateVersion = "23.11";
         nixpkgs = config.lib.pkgsForSystem system;
       in {
         inherit nixpkgs;

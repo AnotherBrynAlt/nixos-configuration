@@ -20,6 +20,7 @@ _: let
   system = import ./system.nix;
   touchpad = import ./touchpad.nix;
   user = import ./user.nix;
+  virtualization = import ./virtualization.nix;
   xserver = import ./xserver.nix;
 in {
   flake = {
@@ -44,9 +45,10 @@ in {
         system
         touchpad
         user
+        virtualization
         xserver
         ;
-      base = {imports = [boot environment user nil nix services system networking locale security];};
+      base = {imports = [boot environment user nil nix services system networking locale security virtualization];};
       desktop = {imports = [autorandr atop flatpak xserver plasma sound printing bluetooth fonts touchpad];};
     };
   };

@@ -11,14 +11,14 @@
       # dirHashes = {
       # nix = "${config.xdg.configHome}/nixos";
       # };
-      zimfw = {
-        enable = false;
-        plugins = [
-          {
-            name = "archive";
-          }
-        ];
-      };
+      # zimfw = {
+      # enable = false;
+      # plugins = [
+      # {
+      # name = "archive";
+      # }
+      # ];
+      # };
     };
   };
 }
