@@ -4,8 +4,6 @@
   config,
   ...
 }: {
-  imports = [../colmena.nix];
-
   perSystem = {
     pkgs,
     lib,
@@ -22,6 +20,5 @@
     self',
     ...
   }: {
-    # imports = [./colmena.nix];
   };
 }

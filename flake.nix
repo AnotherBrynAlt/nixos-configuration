@@ -6,11 +6,6 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
-    colmena = {
-      url = "github:zhaofengli/colmena";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     comma = {
       url = "github:nix-community/comma";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,11 +15,6 @@
       url = "github:antifuchs/deploy-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # deploy-rs = {
-    #   url = "github:serokell/deploy-rs";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
 
     # envfs = {
     #   url = "github:Mic92/envfs";
