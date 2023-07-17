@@ -173,9 +173,7 @@
     };
   };
 
-  outputs = {self, ...} @ inputs: let
-    stateVersion = "23.05";
-  in
+  outputs = {self, ...} @ inputs:
     inputs.flake-parts.lib.mkFlake {inherit inputs;} {
       systems = ["x86_64-linux"];
       imports = [
@@ -203,6 +201,18 @@
             config.homeModules.security-tools
             inputs.nix-index-database.hmModules.nix-index
           ];
+          desktop = self.lib.mkHome "x86_64-linux" [
+            ./home/config/laptop.nix
+            config.homeModules.base
+            config.homeModules.commandline
+            config.homeModules.extra
+            config.homeModules.graphical
+            config.homeModules.internet
+            config.homeModules.media
+            config.homeModules.programming
+            config.homeModules.security-tools
+            inputs.nix-index-database.hmModules.nix-index
+          ];
         };
 
         nixosConfigurations = {
@@ -213,7 +223,15 @@
               config.nixosModules.desktop
               config.nixosModules.intel-hd
             ]
-            stateVersion;
+            "23.05";
+          desktop =
+            self.lib.mkLinuxSystem "x86_64-linux" [
+              ./nixos/config/desktop
+              config.nixosModules.base
+              config.nixosModules.desktop
+              config.nixosModules.nvidia
+            ]
+            "23.05";
         };
       };
     };

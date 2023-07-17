@@ -12,6 +12,10 @@
     "mem_sleep_default=deep"
   ];
 
+  boot.initrd.secrets = {
+    "/crypto_keyfile.bin" = null;
+  };
+
   # HiDPI Options
   # hardware.video.hidpi.enable = true;
   # fonts.optimizeForVeryHighDPI = true;

@@ -2,19 +2,21 @@ _: {
   programs = {
     helix = {
       enable = true;
-      languages = [
-        {
-          name = "nix";
-          language-server = {
-            command = "nil";
-          };
-          roots = ["flake.nix" "flake.json"];
-          auto-format = true;
-          formatter = {
-            command = "alejandra";
-          };
-        }
-      ];
+      languages = {
+        language = [
+          {
+            name = "nix";
+            language-server = {
+              command = "nil";
+            };
+            roots = ["flake.nix" "flake.json"];
+            auto-format = true;
+            formatter = {
+              command = "alejandra";
+            };
+          }
+        ];
+      };
       settings = {
         theme = "catppuccin_mocha";
         editor = {

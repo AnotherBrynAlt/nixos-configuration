@@ -7,7 +7,7 @@
   environment.systemPackages = builtins.attrValues {
     inherit (pkgs) nvtop ddcutil;
     inherit (pkgs.linuxPackages) nvidia_x11;
-    inherit (pkgs.cudaPackages) cudatoolkit cudnn cutensor tensorrt;
+    inherit (pkgs.cudaPackages) cudatoolkit cudnn cutensor; # tensorrt;
   };
 
   hardware = {

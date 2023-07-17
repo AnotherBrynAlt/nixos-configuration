@@ -8,20 +8,25 @@ _: let
   base-misc = import ./misc/base.nix;
   bottom = import ./bottom.nix;
   broot = import ./broot.nix;
+  chromium = import ./chromium.nix;
   commandline-misc = import ./misc/commandline.nix;
+  comodoro = import ./comodoro.nix;
   cursor = import ./cursor.nix;
   deployment = import ./deployment.nix;
   dhall = import ./dhall.nix;
   dircolors = import ./dircolors.nix;
   direnv = import ./direnv.nix;
   discord = import ./discord.nix;
+  editorconfig = import ./editorconfig.nix;
   exa = import ./exa.nix;
   firefox = import ./firefox.nix;
   flameshot = import ./flameshot.nix;
+  fuzzel = import ./fuzzel.nix;
   fzf = import ./fzf.nix;
   gallery-dl = import ./gallery-dl.nix;
   gh = import ./gh.nix;
   git = import ./git.nix;
+  git-cliff = import ./git-cliff.nix;
   gitui = import ./gitui.nix;
   go = import ./go.nix;
   graphical-misc = import ./misc/graphical.nix;
@@ -29,6 +34,7 @@ _: let
   havoc = import ./havoc.nix;
   helix = import ./helix.nix;
   hexchat = import ./hexchat.nix;
+  himalaya = import ./himalaya.nix;
   home-manager = import ./home-manager.nix;
   htop = import ./htop.nix;
   hyfetch = import ./hyfetch.nix;
@@ -37,6 +43,8 @@ _: let
   ion = import ./ion.nix;
   java = import ./java.nix;
   jq = import ./jq.nix;
+  joshuto = import ./joshuto.nix;
+  jujutsu = import ./jujutsu.nix;
   k9s = import ./k9s.nix;
   kakoune = import ./kakoune.nix;
   lazygit = import ./lazygit.nix;
@@ -67,11 +75,14 @@ _: let
   productivity-misc = import ./misc/productivity.nix;
   programming-misc = import ./misc/programming.nix;
   python = import ./python.nix;
+  ripgrep = import ./ripgrep.nix;
   ruby = import ./ruby.nix;
   rbw = import ./rbw.nix;
+  rtx = import ./rtx.nix;
   scala = import ./scala.nix;
   security-tools = import ./security-tools.nix;
   sioyek = import ./sioyek.nix;
+  skim = import ./skim.nix;
   spotify = import ./spotify.nix;
   ssh = import ./ssh.nix;
   starship = import ./starship.nix;
@@ -104,6 +115,8 @@ in {
         base-misc
         bottom
         broot
+        chromium
+        comodoro
         commandline-misc
         cursor
         deployment
@@ -111,13 +124,16 @@ in {
         dircolors
         direnv
         discord
+        editorconfig
         exa
         firefox
         flameshot
+        fuzzel
         fzf
         gallery-dl
         gh
         git
+        git-cliff
         gitui
         go
         graphical-misc
@@ -125,6 +141,7 @@ in {
         havoc
         helix
         hexchat
+        himalaya
         home-manager
         htop
         hyfetch
@@ -132,6 +149,8 @@ in {
         internet-misc
         ion
         java
+        joshuto
+        jujutsu
         jq
         k9s
         kakoune
@@ -163,11 +182,14 @@ in {
         productivity-misc
         programming-misc
         python
+        ripgrep
         ruby
         rbw
+        rtx
         scala
         security-tools
         sioyek
+        skim
         spotify
         ssh
         starship
@@ -189,14 +211,14 @@ in {
         zsh
         ;
       base = {imports = [base-misc git home-manager nix-index xdg zsh];};
-      commandline = {imports = [commandline-misc autojump bat broot dircolors direnv exa fzf gallery-dl gh gitui helix htop hyfetch info less lazygit micro mcfly navi nnn rbw starship tealdeer tmux zoxide];};
+      commandline = {imports = [commandline-misc autojump bat broot comodoro dircolors direnv exa fzf gallery-dl gh git-cliff gitui helix himalaya htop hyfetch info joshuto jujutsu less lazygit micro mcfly navi nnn ripgrep rbw skim starship tealdeer tmux zoxide];};
       extra = {imports = [bottom ion nushell packages];};
       graphical = {imports = [graphical-misc alacritty cursor flameshot gtk wezterm];};
-      internet = {imports = [internet-misc aria2 discord firefox hexchat nheko ssh syncthing thunderbird tiny tmate yt-dlp];};
+      internet = {imports = [internet-misc aria2 chromium discord firefox hexchat nheko ssh syncthing thunderbird tiny tmate yt-dlp];};
       media = {imports = [media-misc mangohud mpv mpris-proxy ncmpcpp ncspot spotify];};
       productivity = {imports = [productivity-misc pandoc papis sioyek tex];};
-      programming = {imports = [programming-misc deployment dhall go java jq k9s kakoune mercurial neovim ocaml octant piston-cli python ruby scala vscode];};
-      wayland = {imports = [wayland-misc mako havoc swaylock];};
+      programming = {imports = [programming-misc deployment dhall editorconfig go java jq k9s kakoune mercurial neovim ocaml octant piston-cli python ruby rtx scala vscode];};
+      wayland = {imports = [wayland-misc fuzzel havoc mako swaylock];};
     };
   };
 }

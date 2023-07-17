@@ -5,7 +5,9 @@
       # dotDir = "${config.xdg.configHome}/zsh";
       enableAutosuggestions = true;
       enableCompletion = true;
-      enableSyntaxHighlighting = true;
+      syntaxHighlighting = {
+        enable = true;
+      };
       enableVteIntegration = true;
       autocd = true;
       # dirHashes = {

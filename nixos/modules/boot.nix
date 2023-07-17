@@ -14,8 +14,9 @@
       timeout = 10;
     };
     kernelPackages = pkgs.linuxPackages_zen;
-    initrd.secrets = {
-      "/crypto_keyfile.bin" = null;
+
+    kernel.sysctl = {
+      "fs.inotify.max_user_watches" = "524288";
     };
   };
 
